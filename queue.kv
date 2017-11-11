@@ -1,0 +1,23 @@
+<QueueCanvas>:
+    orientation: 'vertical'
+    BoxLayout:
+        size_hint_y: 4
+        Image:
+            source: 'KnowHow.jpg'
+    BoxLayout:
+        size_hint_y: 2.5
+        Label:
+            text: 'Nå betjenes --'
+            font_size: 50
+            bold: True
+    AnchorLayout:
+        size_hint_y: 3.5
+        Button:
+            text: 'Trekk kølapp'
+            font_size: 30
+            bold: True
+            size_hint: None, None
+            size: 200, 50
+            background_normal: 'button_normal.png'
+            background_down: 'button_down.png'
+
