@@ -8,19 +8,21 @@
     BoxLayout:
         size_hint_y: 2.5
         Label:
-            text: 'Nå betjenes {}'
+            id: Customer
+            text: str(root.customers) + ' står i køen'
             font_size: 50
             bold: True
     BoxLayout:
         size_hint_y: 3.5
         orientation: 'vertical'
         AnchorLayout:
-            #size_hint_y: 1
             TextInput:
-                id: 'name_register'
+                id: name_register
                 size: 400, 30
                 size_hint: None, None
+                multiline: False
                 text: 'Registrer ditt navn i køen'
+                on_touch_up :self.text= ''
         AnchorLayout:
             size_hint_y: 200
             Button:
@@ -31,4 +33,6 @@
                 size: 200, 50
                 background_normal: 'button_normal.png'
                 background_down: 'button_down.png'
+                on_release: root.customers += 1;root.customer_register(); root.label_update();print(root.customersName.popleft())
+
 
