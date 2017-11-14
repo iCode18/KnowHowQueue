@@ -13,7 +13,7 @@ class QueueCanvas(BoxLayout):
 
     def customer_register(self):
         self.customersName.append(self.ids['name_register'].text)
-        self.ids['name_register'].text = ' '
+        self.ids['name_register'].text = 'Registrer ditt navn i køen'
 
 class QueueApp(App):
     def build(self):
