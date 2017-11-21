@@ -3,17 +3,23 @@ from collections import deque
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 
+customerList = deque([])
+
 
 class QueueCanvas(BoxLayout):
     customers = 0
-    customersName = deque([])
 
     def label_update(self):
         self.ids['Customer'].text = str(self.customers) + ' står i køen'
 
     def customer_register(self):
-        self.customersName.append(self.ids['name_register'].text)
+        customerList.append(self.ids['name_register'].text);
         self.ids['name_register'].text = 'Registrer ditt navn i køen'
+
+    def text_input_update(self):
+        if self.ids['name_register'].text == 'Registrer ditt navn i køen':
+            self.ids['name_register'].text = ' '
+
 
 class QueueApp(App):
     def build(self):

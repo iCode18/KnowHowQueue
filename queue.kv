@@ -22,7 +22,7 @@
                 size_hint: None, None
                 multiline: False
                 text: 'Registrer ditt navn i køen'
-                on_touch_up :self.text= ''
+                on_touch_up : root.text_input_update()
         AnchorLayout:
             size_hint_y: 200
             Button:
@@ -33,6 +33,6 @@
                 size: 200, 50
                 background_normal: 'button_normal.png'
                 background_down: 'button_down.png'
-                on_release: root.customers += 1;root.customer_register(); root.label_update();print(root.customersName.popleft())
+                on_release: root.customers += 1;root.customer_register(); root.label_update()
 
 
