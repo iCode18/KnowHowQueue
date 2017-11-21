@@ -10,7 +10,7 @@ class QueueCanvas(BoxLayout):
     customers = 0
 
     def label_update(self):
-        self.ids['Customer'].text = str(self.customers) + ' står i køen'
+        self.ids['Customer'].text = str(len(customerList)) + ' står i køen'
 
     def customer_register(self):
         customerList.append(self.ids['name_register'].text);
